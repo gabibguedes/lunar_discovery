@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Row, Col, Card} from 'react-bootstrap';
 
@@ -93,7 +94,9 @@ class App extends React.Component {
             'Iodo': '50%',
           }
         },
-      ]
+      ],
+      numRocksDay: 20,
+      numRocksTT: 1453
     }
   }
   render(){
@@ -104,11 +107,30 @@ class App extends React.Component {
           <Col xs={7}>
           <h2 style={style.title}>Elementos Coletados</h2>
           <Graph data={data}/>
-          
+          <Row style={style.circleRow}>
+          <div className="circle">
+            <h1 style={style.num}>{this.state.numRocksDay}</h1>
+                <div style={style.info}>
+
+            <a >Média de pedras coletadas por dia</a>
+                </div>
+          </div>
+          <div className="circle">
+            <h1 style={style.num}>{this.state.numRocksTT}</h1>
+                <div style={style.info}>
+
+            <a >Total de pedras coletadas</a>
+                </div>
+          </div>
+
+          </Row>
           </Col>
-          <Col xs={5}>
+          <Col>
           <h2 style={style.title}>Histórico de Coleta</h2>
+            <div className="scroll">
+
           <RocksList rocks={this.state.rocks} />
+            </div>
           </Col>
         </Row>
       </div>
@@ -119,11 +141,25 @@ class App extends React.Component {
 const style = {
   container:{
     width: '100%',
-    paddingTop: '10vh'
+    paddingTop: '10vh',
+    margin: '0 auto'
   },
   title: {
     textAlign: 'center',
     margin: 10
+  },
+  circleRow:{
+     justifyContent: 'center',
+     marginTop: '50px'
+  },
+  num:{
+    textAlign: 'center',
+    marginTop: '25%',
+    fontSize: 60
+  },
+  info:{
+    textAlign: 'center',
+    fontWeight: 'bold'
   }
 }
 
