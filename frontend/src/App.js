@@ -96,7 +96,7 @@ class App extends React.Component {
         },
       ],
       numRocksDay: 20,
-      numRocksTT: 1453
+      numRocksP: 80
     }
   }
   render(){
@@ -110,17 +110,15 @@ class App extends React.Component {
           <Row style={style.circleRow}>
           <div className="circle">
             <h1 style={style.num}>{this.state.numRocksDay}</h1>
-                <div style={style.info}>
-
-            <a >Média de pedras coletadas por dia</a>
-                </div>
+              <div style={style.info}>
+                <a>Média de pedras coletadas por dia</a>
+              </div>
           </div>
           <div className="circle">
-            <h1 style={style.num}>{this.state.numRocksTT}</h1>
-                <div style={style.info}>
-
-            <a >Total de pedras coletadas</a>
-                </div>
+            <h1 style={style.num}>{this.state.numRocksP}%</h1>
+              <div style={style.info}>
+                <a>Capacidade restante de armazenamento de rochas</a>
+              </div>
           </div>
 
           </Row>

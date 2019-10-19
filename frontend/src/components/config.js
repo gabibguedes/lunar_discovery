@@ -34,17 +34,17 @@ export default {
         "tickPadding": 5,
         "tickRotation": 0,
         "legend": "elemento",
-        "legendPosition": "middle",
+        "legendPosition": "center",
         "legendOffset": 32
     },
-    // axisLeft: {
-    //     "tickSize": 5,
-    //     "tickPadding": 5,
-    //     "tickRotation": 0,
-    //     "legend": "quantidade",
-    //     "legendPosition": "middle",
-    //     "legendOffset": -40
-    // },
+    axisLeft: {
+        "tickSize": 5,
+        "tickPadding": 100,
+        "tickRotation": 0,
+        "legend": "quantidade",
+        "legendPosition": "center",
+        "legendOffset": -40
+    },
     // legends: [
     //     {
     //         "dataFrom": "keys",
