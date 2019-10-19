@@ -4,11 +4,11 @@ import Navbar from 'react-bootstrap/Navbar'
 class Nav extends React.Component {
     render() {
         return (
-            <Navbar style={style.nav}>
+            <Navbar style={style.nav} fixed="top" >
                 <Navbar.Brand>
                     <h1 style={style.title}>
                         Lunar Discovery 
-                        <small class="text-muted" style={style.text}>Helping humanity to reach the stars</small>
+                        <small className="text-muted" style={style.text}>Helping humanity to reach the stars</small>
                     </h1>
                 </Navbar.Brand>
             </Navbar>
