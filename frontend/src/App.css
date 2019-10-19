@@ -1,0 +1,16 @@
+.circle {
+    background-color:#fff;
+    border:2px solid #151E3D;    
+    height:260px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:260px;
+    margin:30px;
+}
+
+.scroll {
+  margin: 0 auto;
+  height: 800px;
+  overflow: auto;
+}
