@@ -7,7 +7,7 @@ class Nav extends React.Component {
             <Navbar style={style.nav} fixed="top" >
                 <Navbar.Brand>
                     <h1 style={style.title}>
-                        Lunar Discovery 
+                        3MO by Lunar Discovery
                         <small className="text-muted" style={style.text}>Helping humanity to reach the stars</small>
                     </h1>
                 </Navbar.Brand>
