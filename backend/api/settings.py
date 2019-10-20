@@ -25,7 +25,7 @@ SECRET_KEY = '9me@6%^tw1+d=+5+v^0c=9f4wqd!6vq^yt8hl!u6&)v_#ft6rj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'api.rocks_samples',
 ]
 
 MIDDLEWARE = [

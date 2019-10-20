@@ -1,15 +1,12 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
+from api.rocks_samples.models import RockSample
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class RockSampleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'groups']
+        abstract = True
+        model = RockSample
+        fields = ['id', 'composition', 'date']
 
-
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Group
-        fields = ['url', 'name']
 

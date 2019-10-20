@@ -1,22 +1,38 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.contrib.auth.models import User, Group
+from api.rocks_samples.models import RockSample
 from rest_framework import viewsets
-from api.rocks_samples.serializers import UserSerializer, GroupSerializer
+from api.rocks_samples.serializers import RockSampleSerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class RockSampleViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
+    queryset = RockSample.objects.all()
+    serializer_class = RockSampleSerializer
 
+    def get(self, request, rock_sample_id=None):
 
-class GroupViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
+        if rock_sample_id:
+            rock_sample = get_object_or_404(RockSample, pk=rock_sample_id)
+            return Response(RockSampleSerializer(rock_sample).data)
+
+        rock_samples = RockSampleSerializer(
+            RockSample.objects.filter(), 
+            many=True
+        ).data
+
+        rock_samples = sorted(rock_samples, key=lambda x: x['name'])
+
+        return Response(rock_samples)
+
+    def get(self, request, rock_sample_id=None):
+        data = request_to_dict(request)
+        rock_sample = RockSample.objects.create(
+            composition=data['composition'],
+            date=data['data']
+        )
+
+        return Response(RockSampleSerializer(rock_sample).data, status=201)
