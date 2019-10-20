@@ -11,6 +11,6 @@ class RockSampleSerializer(serializers.HyperlinkedModelSerializer):
 class RoverUpdateSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = RoverUpdate
-        fields = ['id', 'batery', 'date']
+        fields = ['id', 'available_capacity', 'date']
 
 

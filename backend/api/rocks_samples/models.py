@@ -9,7 +9,7 @@ class RockSample(models.Model):
     date = models.DateTimeField()
 
 class RoverUpdate(models.Model):
-    batery = models.IntegerField(
+    available_capacity = models.IntegerField(
         validators=[MaxValueValidator(100), MinValueValidator(0)]
     )
     date = models.DateTimeField()
