@@ -1,9 +1,9 @@
 from django.shortcuts import render
 
 # Create your views here.
-from api.rocks_samples.models import RockSample
+from api.rocks_samples.models import RockSample, RoverUpdate
 from rest_framework import viewsets
-from api.rocks_samples.serializers import RockSampleSerializer
+from api.rocks_samples.serializers import RockSampleSerializer, RoverUpdateSerializer
 
 
 class RockSampleViewSet(viewsets.ModelViewSet):
@@ -28,7 +28,7 @@ class RockSampleViewSet(viewsets.ModelViewSet):
 
         return Response(rock_samples)
 
-    def get(self, request, rock_sample_id=None):
+    def post(self, request, rock_sample_id=None):
         data = request_to_dict(request)
         rock_sample = RockSample.objects.create(
             composition=data['composition'],
@@ -36,3 +36,7 @@ class RockSampleViewSet(viewsets.ModelViewSet):
         )
 
         return Response(RockSampleSerializer(rock_sample).data, status=201)
+
+class RoverUpdateViewSet(viewsets.ModelViewSet):
+    queryset = RoverUpdate.objects.all()
+    serializer_class = RoverUpdateSerializer

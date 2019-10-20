@@ -4,6 +4,7 @@ from api.rocks_samples import views
 
 router = routers.DefaultRouter()
 router.register(r'rock-sample', views.RockSampleViewSet)
+router.register(r'rover-update', views.RoverUpdateViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
